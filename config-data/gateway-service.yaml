@@ -15,8 +15,16 @@ spring:
       discovery:
         locator:
           enabled: true
-      # routes:
-      #   - id: usuario-microservicio
-      #     uri: lb://usuario-microservicio
-      #     predicates:
-      #       - Path=/usuario/**
+      routes:
+      - id: usuario-microservicio
+        uri: lb://usuario-microservicio
+        predicates:
+          - Path=/usuario/**
+      - id: productos-microservicio
+        uri: lb://productos-microservicio
+        predicates:
+          - Path=/productos/**
+      - id: invitado-microservicio
+        uri: lb://invitado-microservicio
+        predicates:
+          - Path=/invitado/**
